@@ -1,0 +1,71 @@
+@import '../../../scss/variables.scss';
+
+.gameover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $primary-color-100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $modal-background-color;
+  z-index: 5;
+
+  .winner {
+    padding: 20px 40px;
+    font-size: 3rem;
+    border-radius: 8px;
+    background: $modal-corner-gradient;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-color: $primary-color-50;
+    transform: scale(0.5);
+    transition: ease-in-out 0.3s;
+  }
+
+  .home-button {
+    padding: 2px 10px;
+    font-size: 20px;
+    color: $primary-color-100;
+    border-radius: 4px;
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 10px 8px;
+      color: $primary-color-25;
+    }
+    text-decoration: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: $text-color-100;
+      background-size: 100% 8px;
+      background-color: $primary-color-50;
+      transform: scale(1.2);
+    }
+  }
+
+  .gamers-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .users-result {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .winner-background {
+    background-color: red;
+  }
+
+  .looser-background {
+    background-color: green;
+  }
+}

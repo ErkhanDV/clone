@@ -1,0 +1,49 @@
+@import '../../scss/variables.scss';
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $modal-background-color;
+  z-index: 5;
+
+  .status_value {
+    padding: 2px 10px;
+    font-size: 20px;
+    color: $text-color-100;
+    border-radius: 4px;
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 10px 8px;
+      color: var(--primary-color-25);
+    }
+  }
+
+  .home-button {
+    padding: 2px 10px;
+    font-size: 20px;
+    color: var(--primary-color-100);
+    border-radius: 4px;
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 10px 8px;
+      color: var(--primary-color-25);
+    }
+    text-decoration: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: $text-color-100;
+      background-size: 100% 8px;
+      background-color: $primary-color-50;
+      transform: scale(1.2);
+    }
+  }
+}

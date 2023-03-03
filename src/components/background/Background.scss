@@ -1,0 +1,164 @@
+@import '../../scss/variables.scss';
+
+.background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100vmax;
+  height: 100vmax;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px dashed $primary-color-50;
+  z-index: -100;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 66%;
+    height: 66%;
+    left: 17%;
+    top: 17%;
+    border-radius: 50%;
+    border: 1px dashed $primary-color-50;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    width: 33%;
+    height: 33%;
+    left: 33%;
+    top: 33%;
+    border-radius: 50%;
+    border: 1px dashed $primary-color-50;
+  }
+}
+
+.background_radar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 50%;
+  border-right: 1px dashed $primary-color-50;
+  transform-origin: 100% 100%;
+  background: linear-gradient(52deg, transparent 55%, $primary-color-100 100%);
+  animation: radarAnimation 10s infinite linear;
+}
+
+@keyframes radarAnimation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.background_ship-first,
+.background_ship-second,
+.background_ship-third {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  top: 45%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid $primary-color-50;
+  animation: shipFirstAnimation 10s infinite;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 66%;
+    height: 66%;
+    left: calc(17% - 0.5px);
+    top: calc(17% - 0.5px);
+    border-radius: 50%;
+    border: 1px solid $primary-color-50;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    width: 33%;
+    height: 33%;
+    left: calc(33% - 0.5px);
+    top: calc(33% - 0.5px);
+    border-radius: 50%;
+    border: 1px solid $primary-color-50;
+  }
+}
+
+@keyframes shipFirstAnimation {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.background_ship-second {
+  width: 50px;
+  height: 50px;
+  left: 70%;
+  top: 55%;
+  animation: shipSecondAnimation 10s infinite;
+}
+
+@keyframes shipSecondAnimation {
+  0% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  39% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  69% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.background_ship-third {
+  width: 70px;
+  height: 70px;
+  left: 85%;
+  top: 30%;
+  animation: shipThirdAnimation 10s infinite;
+}
+
+@keyframes shipThirdAnimation {
+  0% {
+    opacity: 0;
+  }
+  17% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  27% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  57% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}

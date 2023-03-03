@@ -1,0 +1,64 @@
+@import '../../scss/variables.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &_title {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 5px;
+    border-bottom: 2px dashed $primary-color-50;
+  }
+  &_input {
+    width: 60%;
+    padding: 10px;
+    margin: 20px auto;
+    font-family: $primaryFont;
+    font-size: 20px;
+    font-weight: 100;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255, 0.5);
+    transition: ease-in-out 0.3s;
+    &:hover,
+    &:focus {
+      background-color: rgb(255, 255, 255, 1);
+    }
+  }
+  &_button {
+    width: 240px;
+    padding: 10px;
+    margin: 20px auto;
+    font-family: $primaryFont;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $primary-color-100;
+    border: none;
+    border-radius: 4px;
+    background: $primary-corner-gradient;
+    background-repeat: no-repeat;
+    background-size: 25% 10px;
+    background-color: $primary-color-25;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    &:hover {
+      color: #fff;
+      background-size: 100% 10px;
+      background-color: $primary-color-50;
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .login_input {
+    width: 100%;
+  }
+}

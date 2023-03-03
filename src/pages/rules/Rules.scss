@@ -1,0 +1,70 @@
+@import '../../scss/variables.scss';
+
+.rules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+
+  &_title {
+    width: 100%;
+    margin: 0 auto 40px;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    color: $primary-color-100;
+    border-bottom: 2px dotted $primary-color-50;
+  }
+
+  &_subtitle {
+    font-weight: 100;
+    color: $primary-color-100;
+    border-bottom: 2px dotted $primary-color-50;
+  }
+
+  &_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    padding: 20px 50px;
+    border-radius: 4px;
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 25% 20%;
+      color: $primary-color-25;
+    }
+  }
+
+  &_paragrath {
+    padding: 20px;
+    border: 1px dashed $primary-color-50;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 1040px) {
+  .rules_section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rules {
+    &_section {
+      padding: 20px;
+    }
+    &_subtitle {
+      font-size: 20px;
+    }
+    &_paragrath {
+      font-size: 14px;
+    }
+  }
+}

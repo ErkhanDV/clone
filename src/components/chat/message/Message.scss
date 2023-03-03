@@ -1,0 +1,101 @@
+@import '../../../scss/variables.scss';
+
+.common_date {
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 10px 0;
+  padding: 10px 10px 4px;
+  border-radius: 4px;
+  color: $text-color-100;
+  background: $primary-corner-gradient {
+    repeat: no-repeat;
+    size: 25% 30%;
+    color: $primary-color-25;
+  }
+  &.user {
+    margin-left: auto;
+  }
+
+  &_caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  &_name {
+    position: relative;
+    padding: 0 32px;
+    color: $text-color-100;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &::before {
+      position: absolute;
+      content: 'contact_mail';
+      left: 0;
+      top: -4px;
+      font: {
+        family: 'Material Symbols Outlined';
+        size: 24px;
+        weight: 400;
+      }
+      color: $primary-color-100;
+    }
+  }
+
+  &_date {
+    position: relative;
+    padding-left: 25px;
+    font-size: 14px;
+    color: $primary-color-100;
+    &::before {
+      position: absolute;
+      content: 'schedule';
+      left: 0;
+      top: -5px;
+      font: {
+        family: 'Material Symbols Outlined';
+        size: 20px;
+        weight: 400;
+      }
+      color: $primary-color-100;
+    }
+  }
+
+  &_text {
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    border-top: 1px dashed $primary-color-50;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    width: 90%;
+    font-size: 14px;
+
+    &_name {
+      padding-left: 26px;
+      &::before {
+        font-size: 20px;
+      }
+    }
+    &_date {
+      font-size: 12px;
+      padding-left: 18px;
+      &::before {
+        top: -3px;
+        font-size: 16px;
+      }
+    }
+  }
+}

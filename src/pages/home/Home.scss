@@ -1,0 +1,93 @@
+@import '../../scss/variables.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(50% - 20px);
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 4px;
+  background: $primary-corner-gradient {
+    repeat: no-repeat;
+    size: 20px 20px;
+    color: $primary-color-25;
+  }
+
+  &_title {
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: $primary-color-75;
+    border-bottom: 2px dotted $primary-color-50;
+  }
+
+  &_paragraph {
+    line-height: 1.6;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    border-left: 2px dotted $primary-color-50;
+  }
+
+  &_button {
+    width: 320px;
+    padding: 10px;
+    margin: 20px auto;
+    text: {
+      decoration: none;
+      align: center;
+      transform: uppercase;
+    }
+    font: {
+      size: 20px;
+      family: 'Russo One', sans-serif;
+      weight: 100;
+    }
+    letter-spacing: 2px;
+    color: $primary-color-100;
+    border: none {
+      radius: 4px;
+    }
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 25% 10px;
+      color: $primary-color-25;
+    }
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+
+    &:hover {
+      color: $text-color-100;
+      background-size: 100% 10px;
+      background-color: $primary-color-50;
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 10px;
+    margin-bottom: 20px;
+
+    &_title {
+      font-size: 20px;
+    }
+
+    &_button {
+      width: 200px;
+      margin: 10px auto;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+}

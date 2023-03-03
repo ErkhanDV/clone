@@ -1,0 +1,100 @@
+@import '../../../scss/variables.scss';
+
+.ship {
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  transition: all ease 0.2s;
+}
+
+.one-deck {
+  height: 42px;
+}
+.two-deck {
+  height: 84px;
+}
+.three-deck {
+  height: 126px;
+}
+.four-deck {
+  height: 168px;
+}
+
+.ship-cell {
+  width: 40px;
+  height: 40px;
+  margin: 1px;
+  border: 1px solid $primary-color-100;
+  border-radius: 4px;
+  background-color: $primary-color-100;
+}
+
+.horizontal {
+  flex-direction: row;
+  width: 160px;
+  height: 40px;
+}
+
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+
+@media (max-width: 640px) {
+  .ship {
+    width: 30px;
+  }
+  .one-deck {
+    height: 32px;
+  }
+  .two-deck {
+    height: 64px;
+  }
+  .three-deck {
+    height: 96px;
+  }
+  .four-deck {
+    height: 128px;
+  }
+
+  .ship-cell {
+    width: 30px;
+    height: 30px;
+  }
+
+  .horizontal {
+    width: 120px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ship {
+    width: 20px;
+  }
+  .one-deck {
+    height: 22px;
+  }
+  .two-deck {
+    height: 44px;
+  }
+  .three-deck {
+    height: 66px;
+  }
+  .four-deck {
+    height: 88px;
+  }
+
+  .ship-cell {
+    width: 20px;
+    height: 20px;
+  }
+
+  .horizontal {
+    width: 80px;
+    height: 20px;
+  }
+}

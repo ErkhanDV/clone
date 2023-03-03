@@ -1,0 +1,81 @@
+@import '../../../scss/variables.scss';
+
+.ship-station {
+  display: flex;
+  justify-content: space-between;
+  order: 1;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 40px;
+
+  &_container,
+  &_discription {
+    display: flex;
+    justify-content: space-around;
+    width: calc(50% - 20px);
+    min-height: 168px;
+  }
+  &_discription {
+    flex-direction: column;
+    text-align: center;
+  }
+  &_button {
+    width: 160px;
+    height: 40px;
+    margin: 0 auto;
+    font: {
+      family: $primaryFont;
+      size: 20px;
+      weight: 100;
+    }
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $primary-color-100;
+    border: none {
+      radius: 4px;
+    }
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 25% 10px;
+      color: $primary-color-25;
+    }
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    &:hover {
+      color: $text-color-100;
+      background-size: 100% 10px;
+      background-color: $primary-color-50;
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .ship-station {
+    flex-direction: column;
+    order: 0;
+    &_container,
+    &_discription {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .ship-station {
+    &_container {
+      min-height: 128px;
+    }
+    &_discription {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .ship-station {
+    &_container {
+      min-height: 90px;
+    }
+  }
+}

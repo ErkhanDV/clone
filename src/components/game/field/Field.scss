@@ -1,0 +1,74 @@
+@import '../../../scss/variables.scss';
+
+.battle-row {
+  display: flex;
+}
+
+.battleground {
+  display: grid;
+  margin: auto;
+  position: relative;
+  grid-template-columns: repeat(10, 42px);
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.connection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  color: #fff;
+  border-radius: 4px;
+  background: $primary-corner-gradient;
+  background-repeat: no-repeat;
+  background-size: 25% 25%;
+  background-color: rgb(0, 0, 0, 0.75);
+  &::before {
+    position: absolute;
+    content: 'directions_boat';
+    left: calc(50% - 80px);
+    top: 0;
+    margin: auto;
+    font-family: 'Material Symbols Outlined';
+    font-size: 160px;
+    font-weight: 100;
+    color: $primary-color-50;
+    animation: connectionAnimation 10s infinite;
+  }
+}
+
+@keyframes connectionAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .battleground {
+    grid-template-columns: repeat(10, 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .battleground {
+    grid-template-columns: repeat(10, 22px);
+  }
+}
+
+

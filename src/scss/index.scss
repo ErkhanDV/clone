@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+:root {
+  --primary-color-100: rgb(102, 204, 102, 1);
+  --primary-color-75: rgb(102, 204, 102, 0.75);
+  --primary-color-50: rgb(102, 204, 102, 0.5);
+  --primary-color-25: rgb(102, 204, 102, 0.25);
+
+  --text-color-100: rgb(255, 255, 255, 1);
+  --text-color-50: rgb(255, 255, 255, 0.5);
+
+  --background-color-100: rgb(0, 0, 0, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Russo One', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 0 auto;
+  background: url(../assets/svg/background.svg);
+  color: $text-color-100;
+  background-color: $background-color-100;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

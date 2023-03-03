@@ -1,0 +1,148 @@
+@import '../../scss/variables.scss';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 120px;
+  padding: 0 40px;
+  margin-top: auto;
+  color: $primary-color-100;
+  background: linear-gradient(
+    90deg,
+    $primary-color-50 0%,
+    $background-color-100 100%
+  );
+  border-top: 1px dotted $primary-color-100;
+  &_authors {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 360px;
+    height: 60px;
+    margin: 20px;
+  }
+  &_title {
+    font-weight: 100;
+    margin: 0;
+  }
+  &_school {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 60px;
+  }
+  &_copyright {
+    width: 300px;
+    font-weight: 100;
+    text-align: center;
+  }
+}
+
+.authors-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &_item {
+    position: relative;
+    margin: 0 15px 0 22px;
+    &::before {
+      position: absolute;
+      content: '';
+      left: -22px;
+      top: 0px;
+      width: 20px;
+      height: 20px;
+      -webkit-mask-image: url(../../assets/svg/github-mark-white.svg);
+      mask-image: url(../../assets/svg/github-mark-white.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      background-color: $text-color-100;
+    }
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+  &_link {
+    color: $primary-color-100;
+    transition: ease-in-out 0.4s;
+    &:hover {
+      color: $text-color-100;
+    }
+  }
+}
+
+.school-logo {
+  width: 100px;
+  height: 36px;
+  fill: $primary-color-100;
+  transition: ease-in-out 0.4s;
+  &:hover {
+    fill: $text-color-100;
+    transform: scale(1.05);
+  }
+}
+
+.title-accent {
+  color: $text-color-100;
+}
+
+.title-copyright {
+  position: relative;
+  margin-left: 25px;
+  &::before {
+    position: absolute;
+    content: 'copyright';
+    left: -26px;
+    top: -4px;
+    font: {
+      family: 'Material Symbols Outlined';
+      size: 22px;
+      weight: 400;
+    }
+    color: $text-color-100;
+  }
+}
+
+@media (max-width: 1040px) {
+  .footer {
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    &_copyright {
+      width: 50%;
+    }
+    &_school {
+      width: 50%;
+    }
+    &_authors {
+      order: 1;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    &_title {
+      font-size: 14px;
+    }
+    &_copyright {
+      width: 100%;
+    }
+    &_school {
+      width: 100%;
+    }
+    &_authors {
+      margin: 0;
+    }
+  }
+
+  .authors-list {
+    display: none;
+  }
+}

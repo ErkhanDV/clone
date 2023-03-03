@@ -1,0 +1,158 @@
+@import '../../scss/index.scss';
+@import '../../scss/variables.scss';
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_title {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-bottom: 20px;
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 5px;
+    color: $primary-color-100;
+    border-bottom: 2px dashed $primary-color-50;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: 'settings';
+      left: 26%;
+      top: -15px;
+      font: {
+        family: 'Material Symbols Outlined';
+        size: 52px;
+        weight: 100;
+      }
+      color: $primary-color-100;
+      animation: settingsAnimation 10s infinite;
+    }
+    &::after {
+      left: 64%;
+      top: -32px;
+      font-weight: 200;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: 'settings';
+      left: 25%;
+      top: -15px;
+      font-family: 'Material Symbols Outlined';
+      font-size: 52px;
+      font-weight: 100;
+      color: $primary-color-100;
+      animation: settingsAnimation 10s infinite;
+    }
+    &::after {
+      left: 65%;
+      top: -32px;
+      font-weight: 200;
+    }
+  }
+
+  &_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px dotted $primary-color-25;
+  }
+
+  &_subtitle {
+    width: 50%;
+    padding: 4px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 100;
+    color: rgb(255, 255, 255, 1);
+    background-color: $primary-color-25;
+  }
+
+  &_options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(50% - 20px);
+    height: 40px;
+  }
+
+  &_button {
+    width: 48%;
+    padding: 4px;
+    font-family: $primaryFont;
+    font-size: 20px;
+    color: $primary-color-100;
+    border: none;
+    border-radius: 4px;
+    background: $primary-corner-gradient {
+      repeat: no-repeat;
+      size: 10px 8px;
+      color: $primary-color-25;
+    }
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover,
+    &.active {
+      color: rgb(255, 255, 255, 1);
+      background: {
+        size: 100% 8px;
+        color: $primary-color-50;
+      }
+    }
+  }
+}
+
+@keyframes settingsAnimation {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(60deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@media (max-width: 1040px) {
+  .settings {
+    &_title {
+      &::before {
+        left: 80%;
+      }
+      &::after {
+        left: 0%;
+      }
+    }
+
+    &_subtitle {
+      margin: 0 auto 10px;
+    }
+
+    &_section {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    &_subtitle {
+      width: 100%;
+    }
+
+    &_options {
+      width: 100%;
+    }
+  }
+}
